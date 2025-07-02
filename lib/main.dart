@@ -60,7 +60,80 @@ class HomeActivity extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           children: [
-            DrawerHeader(child: Text("Flutter")),
+            DrawerHeader(
+              padding: EdgeInsets.all(0),
+              child: UserAccountsDrawerHeader(
+                onDetailsPressed: (){mySnackBar("This is Navigation Drawer",context);},
+                currentAccountPictureSize: const Size(70, 70),
+                decoration: BoxDecoration(color: Colors.green),
+                accountName: Text(
+                  "Shimon Bhuiya",
+                  style: TextStyle(color: Colors.black),
+                ),
+                accountEmail: Text(
+                  "shimonbhuiya02@gmail.com",
+                  style: TextStyle(color: Colors.black),
+                ),
+                currentAccountPicture: Image.network(
+                  "https://juststickers.in/wp-content/uploads/2019/01/flutter.png",
+                ),
+              ),
+            ),
+
+            ListTile(
+              title: Text("Home"),
+              leading: Icon(Icons.home),
+              onTap: () {
+                mySnackBar("Home", context);
+              },
+            ),
+            ListTile(
+              title: Text("Profile"),
+              leading: Icon(Icons.person),
+              onTap: () {
+                mySnackBar("Profile", context);
+              },
+            ),
+            ListTile(
+              title: Text("Email"),
+              leading: Icon(Icons.email),
+              onTap: () {
+                mySnackBar("Email", context);
+              },
+            ),
+            ListTile(
+              title: Text("Rating"),
+              leading: Icon(Icons.star_rate),
+              onTap: () {
+                mySnackBar("Rate this app", context);
+              },
+            ),
+          ],
+        ),
+      ),
+      endDrawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              padding: EdgeInsets.all(0),
+              child: UserAccountsDrawerHeader(
+                onDetailsPressed: (){mySnackBar("This is Navigation Drawer",context);},
+                currentAccountPictureSize: const Size(70, 70),
+                decoration: BoxDecoration(color: Colors.green),
+                accountName: Text(
+                  "Shimon Bhuiya",
+                  style: TextStyle(color: Colors.black),
+                ),
+                accountEmail: Text(
+                  "shimonbhuiya02@gmail.com",
+                  style: TextStyle(color: Colors.black),
+                ),
+                currentAccountPicture: Image.network(
+                  "https://juststickers.in/wp-content/uploads/2019/01/flutter.png",
+                ),
+              ),
+            ),
+
             ListTile(
               title: Text("Home"),
               leading: Icon(Icons.home),
